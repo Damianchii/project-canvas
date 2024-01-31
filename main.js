@@ -29,7 +29,7 @@ canvas.addEventListener('click', function (e) {
 canvas.addEventListener('mousemove', function (e) {
 	mouse.x = e.x
 	mouse.y = e.y
-	for (let i = 0; i < 3; i++) {
+	for (let i = 0; i < 4; i++) {
 		particlesArray.push(new Particle())
 	}
 	// drawCircle()
@@ -42,8 +42,8 @@ class Particle {
 		// this.x = Math.random() * canvas.width
 		// this.y = Math.random() * canvas.height
 		this.size = Math.random() * 15 + 1
-		this.speedX = Math.random() * 3 - 1.5 // w ktora stoen ma sie poruszac , x= 0 y =1 oznacza ze bedzie sie poruszal w prawo
-		this.speedY = Math.random() * 3 - 1.5
+		this.speedX = Math.random() * 5 - 1.5 // w ktora stoen ma sie poruszac , x= 0 y =1 oznacza ze bedzie sie poruszal w prawo
+		this.speedY = Math.random() * 5 - 1.5
 		this.color = 'hsl(' + hue + ',100%,50%)'
 	}
 	update() {
@@ -77,7 +77,7 @@ function handleParticles() {
 			if (distance < 100) {
 				ctx.beginPath()
 				ctx.strokeStyle = particlesArray[i].color
-				ctx.lineWidth = particlesArray[i].size / 10
+				ctx.lineWidth = 0.8
 				ctx.moveTo(particlesArray[i].x, particlesArray[i].y)
 				ctx.lineTo(particlesArray[j].x, particlesArray[j].y)
 				ctx.stroke()
